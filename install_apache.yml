@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  connection: local
+  tasks:
+  - name: update repository index
+    homebrew:
+      update_homebrew: yes
+  - name: install apache2 equivalent (httpd) on mac
+    homebrew:
+      name: httpd
+      state: present
+  - name: add php support for apache
+    homebrew: 
+      name: php
+      state: present
